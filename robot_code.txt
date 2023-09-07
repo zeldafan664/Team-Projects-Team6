@@ -1,0 +1,13 @@
+Sample Code for Ultrasonic Sensor
+https://tutorials-raspberrypi.com/raspberry-pi-ultrasonic-sensor-hc-sr04/
+https://pimylifeup.com/raspberry-pi-distance-sensor/
+https://thepihut.com/blogs/raspberry-pi-tutorials/hc-sr04-ultrasonic-range-sensor-on-the-raspberry-pi
+---------------------------------------------------------------------------
+Sample Code for Motor
+https://wiki.dfrobot.com/Micro_DC_Motor_with_Encoder-SJ01_SKU__FIT0450
+---------------------------------------------------------------------------
+Sample Code for Motor Driver
+https://www.electronicshub.org/raspberry-pi-l298n-interface-tutorial-control-dc-motor-l298n-raspberry-pi/
+---------------------------------------------------------------------------
+
+
