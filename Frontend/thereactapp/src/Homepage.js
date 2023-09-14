@@ -1,6 +1,11 @@
-
+import setBodyColor from "./setBodyColor"
 function Homepage() {
-    return
+    setBodyColor({ color: "#d9d9d9" })
+    return (
+        <div >
+
+        </div>
+    )
 }
 
-export default Homepage.js
+export default Homepage
