@@ -1,9 +1,13 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button'
+import { PieChart } from '@mui/icons-material';
+import PieDisplay from './PieChart';
+import InfoDisplay from './InfoChart';
 export default function RobotStatus() {
+
     return (
-        <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <><div style={{ display: "flex", justifyContent: "space-evenly" }}>
             <Box
                 style={{
                     display: "flex",
@@ -12,7 +16,8 @@ export default function RobotStatus() {
                     width: "8rem",
                     height: "8rem",
                     borderRadius: "0.5rem",
-                    boxShadow: "3px 3px 8px gray"
+                    boxShadow: "3px 3px 8px gray",
+                    backgroundColor: "#EEEEEE"
                 }}
             >
                 <div
@@ -23,7 +28,7 @@ export default function RobotStatus() {
                     }}
                 > Power Status
                 </div>
-            </Box >
+            </Box>
             <Box
                 style={{
                     display: "flex",
@@ -32,7 +37,8 @@ export default function RobotStatus() {
                     width: "8rem",
                     height: "8rem",
                     borderRadius: "0.5rem",
-                    boxShadow: "3px 3px 8px gray"
+                    boxShadow: "3px 3px 8px gray",
+                    backgroundColor: "#EEEEEE"
                 }}
             >
                 <div
@@ -43,7 +49,7 @@ export default function RobotStatus() {
                     }}
                 > Task Status
                 </div>
-            </Box >
+            </Box>
             <Box
                 style={{
                     display: "flex",
@@ -52,7 +58,8 @@ export default function RobotStatus() {
                     width: "8rem",
                     height: "8rem",
                     borderRadius: "0.5rem",
-                    boxShadow: "3px 3px 8px gray"
+                    boxShadow: "3px 3px 8px gray",
+                    backgroundColor: "#EEEEEE"
                 }}
             >
                 <div
@@ -63,7 +70,7 @@ export default function RobotStatus() {
                     }}
                 > Com. Status
                 </div>
-            </Box >
+            </Box>
             <Box
                 style={{
                     display: "flex",
@@ -72,7 +79,8 @@ export default function RobotStatus() {
                     width: "8rem",
                     height: "8rem",
                     borderRadius: "0.5rem",
-                    boxShadow: "3px 3px 8px gray"
+                    boxShadow: "3px 3px 8px gray",
+                    backgroundColor: "#EEEEEE"
                 }}
             >
                 <div
@@ -83,7 +91,7 @@ export default function RobotStatus() {
                     }}
                 > Battery %
                 </div>
-            </Box >
+            </Box>
             <Box
                 style={{
                     display: "flex",
@@ -92,7 +100,8 @@ export default function RobotStatus() {
                     width: "8rem",
                     height: "8rem",
                     borderRadius: "0.5rem",
-                    boxShadow: "3px 3px 8px gray"
+                    boxShadow: "3px 3px 8px gray",
+                    backgroundColor: "#EEEEEE"
                 }}
             >
                 <div
@@ -103,9 +112,13 @@ export default function RobotStatus() {
                     }}
                 > Task %
                 </div>
-            </Box >
+            </Box>
+        </div>
 
-        </div >
+            <PieDisplay />
+            <InfoDisplay />
+
+        </>
     )
 
 }
