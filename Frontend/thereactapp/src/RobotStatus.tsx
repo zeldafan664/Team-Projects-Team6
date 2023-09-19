@@ -114,10 +114,6 @@ export default function RobotStatus() {
                 </div>
             </Box>
         </div>
-
-            <PieDisplay />
-            <InfoDisplay />
-
         </>
     )
 
