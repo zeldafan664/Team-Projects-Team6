@@ -17,21 +17,7 @@ const columns = [
         minWidth: 50,
         align: 'right',
         format: (value: any) => value.toLocaleString('en-US'),
-    },
-    // {
-    //     id: 'size',
-    //     label: 'Size\u00a0(km\u00b2)',
-    //     minWidth: 170,
-    //     align: 'right',
-    //     format: (value: any) => value.toLocaleString('en-US'),
-    // },
-    // {
-    //     id: 'density',
-    //     label: 'Density',
-    //     minWidth: 170,
-    //     align: 'right',
-    //     format: (value: any) => value.toFixed(2),
-    // },
+    }
 ];
 
 function createData(name: any, code: any, anotherdatavalue: any) {
@@ -42,6 +28,10 @@ function createData(name: any, code: any, anotherdatavalue: any) {
 const rows = [
     createData('10/30/2023', '5:00', "XXXXX"),
     createData('10/31/2023', '6:32', "XXXXX"),
+    createData('11/1/2023', '3:44', "XXXXX"),
+    createData('11/2/2023', '10:57', "XXXXX"),
+    createData('11/1/2023', '3:44', "XXXXX"),
+    createData('11/2/2023', '10:57', "XXXXX"),
     createData('11/1/2023', '3:44', "XXXXX"),
     createData('11/2/2023', '10:57', "XXXXX"),
 
@@ -62,19 +52,19 @@ export default function StickyHeadTable() {
 
     return (
         <Paper sx={{
-            width: '50%', overflow: 'hidden', borderRadius: "0.5rem",
+            width: '40%', overflow: 'hidden', borderRadius: "0.5rem",
             boxShadow: "3px 3px 8px gray",
             backgroundColor: "#EEEEEE"
         }}>
             <TableContainer sx={{ maxHeight: 440 }}>
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
-                        <TableRow>
+                        <TableRow style={{ fontWeight: "bold" }}>
                             {columns.map((column) => (
                                 <TableCell
                                     key={column.id}
                                     align={"center"}
-                                    style={{ minWidth: column.minWidth }}
+                                    style={{ minWidth: column.minWidth, fontWeight: "bold", fontSize: "16.5px" }}
                                 >
                                     {column.label}
                                 </TableCell>
