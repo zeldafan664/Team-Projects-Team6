@@ -6,7 +6,7 @@ import PieDisplay from './PieChart';
 import InfoDisplay from './InfoChart';
 import UsageData from './UsageData';
 
-import UserGuide from './Tooltip';
+import UserGuide from './UserGuide';
 import { useState } from 'react';
 import { Button, Tooltip } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
@@ -19,7 +19,7 @@ function Homepage() {
     }
     return (
         <>
-            <Button onClick={handleClick}>
+            <Button onClick={handleClick} sx={{ color: "black" }}>
                 <Tooltip title="User Guide">
                     <HelpOutlineIcon>
                     </HelpOutlineIcon>
@@ -30,6 +30,7 @@ function Homepage() {
             )}
 
             <RobotStatus />
+
             <Box sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", marginTop: "5rem" }}>
                 <UsageData />
                 <PieDisplay />
