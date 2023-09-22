@@ -1,9 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button'
-import { PieChart } from '@mui/icons-material';
-import PieDisplay from './PieChart';
-import InfoDisplay from './InfoChart';
+
 export default function RobotStatus() {
 
     return (

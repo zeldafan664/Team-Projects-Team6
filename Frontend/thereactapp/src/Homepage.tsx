@@ -5,17 +5,29 @@ import Box from '@mui/material/Box';
 import PieDisplay from './PieChart';
 import InfoDisplay from './InfoChart';
 import UsageData from './UsageData';
-import Tooltip from '@mui/material/Tooltip';
+
+import UserGuide from './Tooltip';
+import { useState } from 'react';
+import { Button, Tooltip } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 function Homepage() {
+    const [showNav, setShowNav] = useState(false)
     setBodyColor({ color: "#d9d9d9" })
-
+    const handleClick = (e: any) => {
+        setShowNav(current => !current)
+    }
     return (
         <>
-            <Tooltip title="User Guide">
-                <HelpOutlineIcon></HelpOutlineIcon>
-            </Tooltip>
+            <Button onClick={handleClick}>
+                <Tooltip title="User Guide">
+                    <HelpOutlineIcon>
+                    </HelpOutlineIcon>
+                </Tooltip>
+            </Button>
+            {showNav && (
+                <UserGuide />
+            )}
 
             <RobotStatus />
             <Box sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", marginTop: "5rem" }}>
@@ -24,9 +36,13 @@ function Homepage() {
                 <InfoDisplay />
 
             </Box>
+
+
         </>
 
+
     )
+
 }
 
 export default Homepage
