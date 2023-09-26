@@ -19,7 +19,7 @@ function Homepage() {
     }
     return (
         <>
-            <Button onClick={handleClick} sx={{ color: "black" }}>
+            {/* <Button onClick={handleClick} sx={{ color: "black" }}>
                 <Tooltip title="User Guide">
                     <HelpOutlineIcon>
                     </HelpOutlineIcon>
@@ -27,8 +27,9 @@ function Homepage() {
             </Button>
             {showNav && (
                 <UserGuide />
-            )}
+            )} */}
 
+            <UserGuide />
             <RobotStatus />
 
             <Box sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", marginTop: "5rem" }}>
