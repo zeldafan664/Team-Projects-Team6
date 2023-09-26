@@ -7,12 +7,10 @@ import InfoDisplay from './InfoChart';
 import UsageData from './UsageData';
 
 import UserGuide from './UserGuide';
-import { useState } from 'react';
 import { Button, Tooltip } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 function Homepage() {
-<<<<<<< HEAD
     const [message, setMessage] = useState("");
 
     // Fetch the message from the backend when the component mounts
@@ -33,24 +31,13 @@ function Homepage() {
         setBodyColor({ color: "#d9d9d9" });
     }, []);
 
-=======
     const [showNav, setShowNav] = useState(false)
     setBodyColor({ color: "#d9d9d9" })
     const handleClick = (e: any) => {
         setShowNav(current => !current)
     }
->>>>>>> 63113e9cb026310b14acf854524966aea906bfd5
     return (
         <>
-            {/* <Button onClick={handleClick} sx={{ color: "black" }}>
-                <Tooltip title="User Guide">
-                    <HelpOutlineIcon>
-                    </HelpOutlineIcon>
-                </Tooltip>
-            </Button>
-            {showNav && (
-                <UserGuide />
-            )}
 
             <UserGuide />
             <RobotStatus />
@@ -60,14 +47,9 @@ function Homepage() {
                 <PieDisplay />
                 <InfoDisplay />
             </Box>
-
-
         </>
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 63113e9cb026310b14acf854524966aea906bfd5
     )
 
 }
