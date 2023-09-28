@@ -41,10 +41,10 @@ function Homepage() {
         <>
 
             <UserGuide />
-            <Box sx={{ display: "flex", flex: 1, border: "5px solid black" }}>
+            <Box sx={{ display: "flex", flex: 1 }}>
                 <RobotStatus />
 
-                <Box sx={{ display: "flex", flex: 2, border: "5px solid blue", justifyContent: "space-evenly" }}>
+                <Box sx={{ display: "flex", flex: 2, justifyContent: "space-evenly" }}>
                     <UsageData />
                     <PieDisplay />
                 </Box>
