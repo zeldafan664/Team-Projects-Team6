@@ -3,12 +3,13 @@ import RobotStatus from "./RobotStatus"
 import setBodyColor from "./setBodyColor"
 import Box from '@mui/material/Box';
 import PieDisplay from './PieChart';
-import InfoDisplay from './InfoChart';
 import UsageData from './UsageData';
 
 import UserGuide from './UserGuide';
 import { Button, Tooltip } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import LogIn from './LogIn';
+import { Link } from "react-router-dom";
 
 function Homepage() {
     const [message, setMessage] = useState("");
@@ -40,13 +41,14 @@ function Homepage() {
         <>
 
             <UserGuide />
-            <RobotStatus />
-
-            <Box sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", marginTop: "5rem" }}>
-                <UsageData />
-                <PieDisplay />
-                <InfoDisplay />
+            <Box sx={{ display: "flex", flex:1}}>
+                <RobotStatus />
+                <Box sx={{ display: "flex", justifyContent: "space-evenly", flex: 2 }}>
+                    <UsageData />
+                    <PieDisplay />
+                </Box>
             </Box>
+
         </>
 
 

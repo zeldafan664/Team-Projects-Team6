@@ -52,7 +52,7 @@ export default function StickyHeadTable() {
 
     return (
         <Paper sx={{
-            width: '40%', overflow: 'hidden', borderRadius: "0.5rem",
+            width: '40%', overflow: 'hidden', borderRadius: "0.5rem", height: '50%',
             boxShadow: "3px 3px 8px gray",
             backgroundColor: "#EEEEEE"
         }}>

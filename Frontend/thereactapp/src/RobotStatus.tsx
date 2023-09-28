@@ -5,21 +5,23 @@ export default function RobotStatus() {
 
     return (
         <>
-            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-evenly", height: "65rem" }}>
                 <Box
                     style={{
                         display: "flex",
                         justifyContent: "center",
                         border: "1px solid gray",
-                        width: "8rem",
-                        height: "8rem",
+                        width: "10rem",
+                        height: "10rem",
                         borderRadius: "0.5rem",
                         boxShadow: "3px 3px 8px gray",
-                        backgroundColor: "#EEEEEE"
+                        backgroundColor: "#EEEEEE",
+
                     }}
                 >
                     <div
                         style={{
+
                             display: "flex",
                             alignSelf: "center",
                             fontSize: "22px"
@@ -32,11 +34,11 @@ export default function RobotStatus() {
                         display: "flex",
                         justifyContent: "center",
                         border: "1px solid gray",
-                        width: "8rem",
-                        height: "8rem",
+                        width: "10rem",
+                        height: "10rem",
                         borderRadius: "0.5rem",
                         boxShadow: "3px 3px 8px gray",
-                        backgroundColor: "#EEEEEE"
+                        backgroundColor: "#EEEEEE",
                     }}
                 >
                     <div
@@ -53,11 +55,11 @@ export default function RobotStatus() {
                         display: "flex",
                         justifyContent: "center",
                         border: "1px solid gray",
-                        width: "8rem",
-                        height: "8rem",
+                        width: "10rem",
+                        height: "10rem",
                         borderRadius: "0.5rem",
                         boxShadow: "3px 3px 8px gray",
-                        backgroundColor: "#EEEEEE"
+                        backgroundColor: "#EEEEEE",
                     }}
                 >
                     <div
@@ -74,11 +76,11 @@ export default function RobotStatus() {
                         display: "flex",
                         justifyContent: "center",
                         border: "1px solid gray",
-                        width: "8rem",
-                        height: "8rem",
+                        width: "10rem",
+                        height: "10rem",
                         borderRadius: "0.5rem",
                         boxShadow: "3px 3px 8px gray",
-                        backgroundColor: "#EEEEEE"
+                        backgroundColor: "#EEEEEE",
                     }}
                 >
                     <div
@@ -95,11 +97,12 @@ export default function RobotStatus() {
                         display: "flex",
                         justifyContent: "center",
                         border: "1px solid gray",
-                        width: "8rem",
-                        height: "8rem",
+                        width: "10rem",
+                        height: "10rem",
                         borderRadius: "0.5rem",
                         boxShadow: "3px 3px 8px gray",
-                        backgroundColor: "#EEEEEE"
+                        backgroundColor: "#EEEEEE",
+
                     }}
                 >
                     <div
