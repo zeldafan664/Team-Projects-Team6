@@ -35,6 +35,7 @@ const rows = [
     createData('11/1/2023', '3:44', "XXXXX"),
     createData('11/2/2023', '10:57', "XXXXX"),
 
+
 ];
 
 export default function StickyHeadTable() {
@@ -52,7 +53,7 @@ export default function StickyHeadTable() {
 
     return (
         <Paper sx={{
-            width: '40%', overflow: 'hidden', borderRadius: "0.5rem", height: '50%',
+            width: '50%', overflow: 'hidden', borderRadius: "0.5rem", height: '50%',
             boxShadow: "3px 3px 8px gray",
             backgroundColor: "#EEEEEE"
         }}>

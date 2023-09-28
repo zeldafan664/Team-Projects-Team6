@@ -5,7 +5,7 @@ export default function RobotStatus() {
 
     return (
         <>
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-evenly", height: "65rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "65rem" }}>
                 <Box
                     style={{
                         display: "flex",

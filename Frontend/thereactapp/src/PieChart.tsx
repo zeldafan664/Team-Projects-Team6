@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 export default function PieDisplay() {
     return (
         <>
-            <Box style={{ display: "flex", flexDirection: "column"}}>
+            <Box style={{ display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}>
                 <Box style={{
                     display: "flex",
                     justifyContent: "center",
