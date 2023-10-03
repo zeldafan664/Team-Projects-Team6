@@ -38,6 +38,7 @@ const rows = [
 
 ];
 
+
 export default function StickyHeadTable() {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -51,11 +52,12 @@ export default function StickyHeadTable() {
         setPage(0);
     };
 
+    const inactiveColor = "#bebebe"
     return (
         <Paper sx={{
             width: '50%', overflow: 'hidden', borderRadius: "0.5rem", height: '50%',
             boxShadow: "3px 3px 8px gray",
-            backgroundColor: "#EEEEEE"
+            backgroundColor: inactiveColor
         }}>
             <TableContainer sx={{ maxHeight: 440 }}>
                 <Table stickyHeader aria-label="sticky table">

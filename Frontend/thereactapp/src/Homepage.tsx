@@ -28,12 +28,12 @@ function Homepage() {
     }, []);
 
     // Set the body color
-    useEffect(() => {
-        setBodyColor({ color: "#d9d9d9" });
-    }, []);
+    // useEffect(() => {
+    //     setBodyColor({ color: "#d9d9d9" });
+    // }, []);
 
     const [showNav, setShowNav] = useState(false)
-    setBodyColor({ color: "#d9d9d9" })
+    setBodyColor({ color: "#656565" })
     const handleClick = (e: any) => {
         setShowNav(current => !current)
     }

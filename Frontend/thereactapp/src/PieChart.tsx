@@ -3,6 +3,7 @@ import { PieChart } from '@mui/x-charts/PieChart';
 import Box from '@mui/material/Box';
 
 export default function PieDisplay() {
+    const inactiveColor = "#bebebe"
     return (
         <>
             <Box style={{ display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}>
@@ -15,7 +16,7 @@ export default function PieDisplay() {
                     height: "20rem",
                     borderRadius: "0.5rem",
                     boxShadow: "3px 3px 8px gray",
-                    backgroundColor: "#EEEEEE"
+                    backgroundColor: inactiveColor
                 }}>
                     <PieChart
                         series={[
@@ -38,7 +39,7 @@ export default function PieDisplay() {
                     height: "20rem",
                     borderRadius: "0.5rem",
                     boxShadow: "3px 3px 8px gray",
-                    backgroundColor: "#EEEEEE"
+                    backgroundColor: inactiveColor
                 }}>
                     <PieChart
                         series={[
