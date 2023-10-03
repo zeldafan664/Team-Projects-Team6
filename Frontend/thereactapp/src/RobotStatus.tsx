@@ -28,6 +28,7 @@ export default function RobotStatus() {
     };
 
     const inactiveColor = "#bebebe"
+    const activeColor = "#5adbb5"
     function hover1(e: any) {
         if (active1 === false) {
             e.target.style.background = "gray"
@@ -78,11 +79,10 @@ export default function RobotStatus() {
             e.target.style.background = "#bebebe"
         }
     }
+
     return (
-
-
         <>
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "65rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-evenly", height: "65rem" }}>
                 <Box >
                     <Button onClick={handleClick1}
                         style={{
@@ -94,7 +94,7 @@ export default function RobotStatus() {
                             height: "10rem",
                             borderRadius: "0.5rem",
                             boxShadow: "3px 3px 8px gray",
-                            backgroundColor: active1 ? "green" : inactiveColor
+                            backgroundColor: active1 ? activeColor : inactiveColor
                         }}
                     >
                         <div
@@ -120,7 +120,7 @@ export default function RobotStatus() {
                             height: "10rem",
                             borderRadius: "0.5rem",
                             boxShadow: "3px 3px 8px gray",
-                            backgroundColor: active2 ? "green" : inactiveColor
+                            backgroundColor: active2 ? activeColor : inactiveColor
                         }}
                     >
                         <div
@@ -140,12 +140,11 @@ export default function RobotStatus() {
                             display: "flex",
                             justifyContent: "center",
                             border: "2px solid black",
-
                             width: "10rem",
                             height: "10rem",
                             borderRadius: "0.5rem",
                             boxShadow: "3px 3px 8px gray",
-                            backgroundColor: active3 ? "green" : inactiveColor
+                            backgroundColor: active3 ? activeColor : inactiveColor
                         }}
                     >
                         <div
@@ -170,7 +169,7 @@ export default function RobotStatus() {
                             height: "10rem",
                             borderRadius: "0.5rem",
                             boxShadow: "3px 3px 8px gray",
-                            backgroundColor: active4 ? "green" : inactiveColor
+                            backgroundColor: active4 ? activeColor : inactiveColor
                         }}
                     >
                         <div
@@ -195,7 +194,7 @@ export default function RobotStatus() {
                             height: "10rem",
                             borderRadius: "0.5rem",
                             boxShadow: "3px 3px 8px gray",
-                            backgroundColor: active5 ? "green" : inactiveColor
+                            backgroundColor: active5 ? activeColor : inactiveColor
 
                         }}
                     >

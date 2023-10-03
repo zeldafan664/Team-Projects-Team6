@@ -40,16 +40,14 @@ function Homepage() {
     return (
         <>
 
-            <UserGuide />
-            <Box sx={{ display: "flex", flex: 1 }}>
+            {/* <UserGuide /> */}
+            <Box sx={{ display: "flex", flex: 2, justifyContent: "space-evenly" }}>
                 <RobotStatus />
-
-                <Box sx={{ display: "flex", flex: 2, justifyContent: "space-evenly" }}>
-                    <UsageData />
-                    <PieDisplay />
-                </Box>
-
+                <UsageData />
+                <PieDisplay />
             </Box>
+
+
 
         </>
 

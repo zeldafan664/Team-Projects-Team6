@@ -34,10 +34,7 @@ const rows = [
     createData('11/2/2023', '10:57', "XXXXX"),
     createData('11/1/2023', '3:44', "XXXXX"),
     createData('11/2/2023', '10:57', "XXXXX"),
-
-
 ];
-
 
 export default function StickyHeadTable() {
     const [page, setPage] = React.useState(0);
@@ -55,7 +52,8 @@ export default function StickyHeadTable() {
     const inactiveColor = "#bebebe"
     return (
         <Paper sx={{
-            width: '50%', overflow: 'hidden', borderRadius: "0.5rem", height: '50%',
+            marginTop: "14rem",
+            width: '50%', overflow: 'hidden', borderRadius: "0.5rem", height: '50%', border: "2px solid black",
             boxShadow: "3px 3px 8px gray",
             backgroundColor: inactiveColor
         }}>
