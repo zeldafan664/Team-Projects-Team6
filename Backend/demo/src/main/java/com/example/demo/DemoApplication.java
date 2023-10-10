@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 @RestController
 @RequestMapping("/api")
@@ -18,7 +19,7 @@ public class DemoApplication {
         String message = "CAN YOU HEAR ME??????";
         return ResponseEntity.ok().contentType(MediaType.TEXT_PLAIN).body(message);
     }
-
+	@Bean
 	public WebMvcConfigurer corsConfigurer(){
 		return new WebMvcConfigurer() {
 			public void addCorsMappings(CorsRegistry registry){
