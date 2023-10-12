@@ -23,13 +23,7 @@ function LogIn() {
 
     return (
         <>
-            <div>
-                <p>This is the first page.</p>
-                {/* <Link to="/Homepage"><button>
-                    Go to Page 2
-                </button>
-                </Link> */}
-            </div>
+            <div>Test</div>
             <Dialog open={open}
                 keepMounted
                 onClose={handleClose}>

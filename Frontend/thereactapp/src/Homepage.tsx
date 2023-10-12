@@ -4,14 +4,12 @@ import setBodyColor from "./setBodyColor"
 import Box from '@mui/material/Box';
 import PieDisplay from './PieChart';
 import UsageData from './UsageData';
+import { BorderAll } from '@mui/icons-material';
+import { Button, TextField } from '@mui/material';
 
-import UserGuide from './UserGuide';
-import { Button, Tooltip } from '@mui/material';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import LogIn from './LogIn';
-import { Link } from "react-router-dom";
 
 function Homepage() {
+
     const [message, setMessage] = useState("");
 
     // Fetch the message from the backend when the component mounts
@@ -33,21 +31,39 @@ function Homepage() {
     // }, []);
 
     const [showNav, setShowNav] = useState(false)
-    setBodyColor({ color: "#656565" })
+    setBodyColor({ color: "#d0d0d0" })
     const handleClick = (e: any) => {
         setShowNav(current => !current)
     }
+
+
     return (
         <>
+            {/* <LogIn /> */}
+            <Box sx={{
+                border: "1px solid black",
+                width: "500px", height: "500px",
+                marginLeft: "40rem",
+                display: "flex",
+                flexDirection: "column",
+                flex: 1,
+            }}>
+                <Box sx={{ flex: 2, display: "flex", justifyContent: "space-evenly" }}>
+                    <TextField label="username">test</TextField>
+                    <TextField label="password">test</TextField>
 
+                </Box>
+                <Box sx={{ flex: 3, display: "flex", justifyContent: "space-evenly" }}>
+                    <Button style={{ fontSize: "11px", width: "30px", height: "40px", backgroundColor: "#bebebe", color: "black", boxShadow: "3px 3px 4px gray", }}>Back</Button>
+                    <Button style={{ fontSize: "11px", width: "30px", height: "40px", backgroundColor: "#bebebe", color: "black", boxShadow: "3px 3px 4px gray" }}>Log-In</Button>
+                </Box>
+            </Box>
             {/* <UserGuide /> */}
             <Box sx={{ display: "flex", flex: 2, justifyContent: "space-evenly" }}>
                 <RobotStatus />
                 <UsageData />
                 <PieDisplay />
             </Box>
-
-
 
         </>
 
