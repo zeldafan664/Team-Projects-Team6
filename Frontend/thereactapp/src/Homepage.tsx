@@ -46,16 +46,17 @@ function Homepage() {
                 marginLeft: "40rem",
                 display: "flex",
                 flexDirection: "column",
-                flex: 1,
+                justifyContent: "center"
             }}>
-                <Box sx={{ flex: 2, display: "flex", justifyContent: "space-evenly" }}>
+                <h1 style={{ display: "flex", justifyContent: "center" }}>User Login</h1>
+                <Box sx={{ flex: 1, flexDirection: "column", width: "24rem", paddingLeft: "2.5rem", display: "flex", justifyContent: "space-around" }}>
                     <TextField label="username">test</TextField>
                     <TextField label="password">test</TextField>
 
                 </Box>
-                <Box sx={{ flex: 3, display: "flex", justifyContent: "space-evenly" }}>
-                    <Button style={{ fontSize: "11px", width: "30px", height: "40px", backgroundColor: "#bebebe", color: "black", boxShadow: "3px 3px 4px gray", }}>Back</Button>
-                    <Button style={{ fontSize: "11px", width: "30px", height: "40px", backgroundColor: "#bebebe", color: "black", boxShadow: "3px 3px 4px gray" }}>Log-In</Button>
+                <Box sx={{ flex: 2, display: "flex", justifyContent: "center" }}>
+                    <Button style={{ fontSize: "20px", width: "24rem", height: "50px", backgroundColor: "#bebebe", color: "black", boxShadow: "2px 2px 4px gray" }}>Submit</Button>
+
                 </Box>
             </Box>
             {/* <UserGuide /> */}
