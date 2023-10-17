@@ -10,16 +10,18 @@ import { Button, Tooltip } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 function Homepage() {
-    const [message, setMessage] = useState("");
+    const [message, setMessage] = useState("Testing default value");
 
     // Fetch the message from the backend when the component mounts
     useEffect(() => {
         fetch('http://localhost:8080/api/message')
 
             .then((response) => response.text())
+
             .then((data) => {
                 // Set the message state with the data from the backend
-                setMessage(data);
+                console.log("Data Received: " , data);
+                setMessage(prevMessage => data);
             })
             .catch((error) => {
                 console.error('Error fetching message:', error);
@@ -50,7 +52,8 @@ function Homepage() {
                 <InfoDisplay />
             </Box>
 
-            <div>{message}</div>
+            <div style={{ fontSize: '24px', color: 'red', backgroundColor: 'yellow' }}>{message}</div>
+
         </>
     );
 }
