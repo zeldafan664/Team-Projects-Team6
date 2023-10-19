@@ -1,14 +1,46 @@
+import time
 from flask import Flask, jsonify, request
-from gpiozero import Motor
+from gpiozero import Motor, InputDevice, OutputDevice
+from time import sleep 
+
 
 app = Flask(__name__)
 
 # Assume motor connected to GPIO17 & GPIO18
 motor = Motor(17, 18)
 
+#Set up Grove Ultrasonic Ranger Sensors 
+# Assuming SIG pin of the sensor is conencted to GPIO pin 25
+
+TRIG = OutputDevice(25)
+ECHO = InputDevice(25)
+
 # Mocking battery life for now
 battery_life = 100  # represents 100%
 task_completion_time = 60  # time in minutes
+
+OBSTACLE_THRESHOLD = 0.1 # obstacle detection in meters 
+def measure_distance(): 
+    #Measure distance with the Ranger sensors; distance is returned in meters. 
+    TRIG.on()
+    sleep(0.00001) # 10 microseconds 
+    TRIG.off()
+    
+    #Wait for the ECHO pin to go HIGH (start of the echo pulse)
+    
+    while ECHO.is_active == False: 
+        pulse_start = time.time()
+     #Wait for the ECHO pin to go LOW (end of echo pulse) 
+     
+    while ECHO.is_active == True: 
+         pulse_end = time.time() 
+         
+    pulse_duration = pulse_end - pulse_start 
+    #Speed of sound is approximately 343 m/s, so multiply speed / 2
+    
+    distance = (pulse_duration * 343.0 / 2.0)
+    return distance 
+
 
 @app.route('/status', methods=['GET'])
 def status():
@@ -20,6 +52,7 @@ def status():
         "battery_life": battery_life,
         "time_remaining": task_completion_time
     })
+    
 
 @app.route('/control', methods=['POST'])
 def control():
