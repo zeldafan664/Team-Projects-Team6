@@ -4,26 +4,30 @@ import setBodyColor from "./setBodyColor"
 import Box from '@mui/material/Box';
 import PieDisplay from './PieChart';
 import UsageData from './UsageData';
-import { BorderAll } from '@mui/icons-material';
-import { Button, TextField } from '@mui/material';
-
+import UserGuide from './UserGuide';
+import { Button, TextField, Tooltip } from '@mui/material';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 function Homepage() {
-
-    const [message, setMessage] = useState("");
+    const [message, setMessage] = useState("Testing default value");
 
     // Fetch the message from the backend when the component mounts
     useEffect(() => {
-        fetch('/api/message')
+        fetch('http://localhost:8080/api/message')
+
             .then((response) => response.text())
+
             .then((data) => {
                 // Set the message state with the data from the backend
-                setMessage(data);
+                console.log("Data Received: " , data);
+                setMessage(prevMessage => data);
             })
             .catch((error) => {
                 console.error('Error fetching message:', error);
             });
     }, []);
+
+    
 
     // Set the body color
     // useEffect(() => {
@@ -66,11 +70,10 @@ function Homepage() {
                 <PieDisplay />
             </Box>
 
+            <div style={{ fontSize: '24px', color: 'red', backgroundColor: 'yellow' }}>{message}</div>
+
         </>
-
-
-    )
-
+    );
 }
 
 export default Homepage;
