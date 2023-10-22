@@ -104,7 +104,7 @@ export default function RobotStatus() {
                                 alignSelf: "center",
                                 fontSize: "22px"
                             }}
-                        > Power Status
+                        > 
 
                         </div>
                     </Button >
