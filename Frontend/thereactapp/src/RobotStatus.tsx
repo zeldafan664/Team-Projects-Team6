@@ -24,7 +24,7 @@ export default function RobotStatus() {
                             alignSelf: "center",
                             fontSize: "22px"
                         }}
-                    > test
+                    > New test
                     </div>
                 </Box>
                 <Box
