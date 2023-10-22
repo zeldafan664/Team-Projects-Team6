@@ -34,7 +34,6 @@ const rows = [
     createData('11/2/2023', '10:57', "XXXXX"),
     createData('11/1/2023', '3:44', "XXXXX"),
     createData('11/2/2023', '10:57', "XXXXX"),
-
 ];
 
 export default function StickyHeadTable() {
@@ -50,11 +49,13 @@ export default function StickyHeadTable() {
         setPage(0);
     };
 
+    const inactiveColor = "#bebebe"
     return (
         <Paper sx={{
-            width: '40%', overflow: 'hidden', borderRadius: "0.5rem",
+            marginTop: "14rem",
+            width: '50%', overflow: 'hidden', borderRadius: "0.5rem", height: '50%', border: "2px solid black",
             boxShadow: "3px 3px 8px gray",
-            backgroundColor: "#EEEEEE"
+            backgroundColor: inactiveColor
         }}>
             <TableContainer sx={{ maxHeight: 440 }}>
                 <Table stickyHeader aria-label="sticky table">

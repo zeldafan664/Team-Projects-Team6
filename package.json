@@ -2,7 +2,6 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-<<<<<<< HEAD
     "@mui/icons-material": "^5.14.9",
     "@mui/material": "^5.14.9",
     "@mui/styled-engine-sc": "^5.14.9",
@@ -12,9 +11,5 @@
     "@types/react-dom": "^18.2.7",
     "styled-components": "^5.3.11",
     "typescript": "^5.2.2"
-=======
-    "@mui/material": "^5.14.9",
-    "mui": "^0.0.1"
->>>>>>> a996ec4a3f99984ae880c66d73fd5fd524cb7bd3
   }
 }
