@@ -30,17 +30,7 @@ function Homepage() {
     }, []);
 
 
-
-    // Set the body color
-    // useEffect(() => {
-    //     setBodyColor({ color: "#d9d9d9" });
-    // }, []);
-
-    const [showNav, setShowNav] = useState(false)
     setBodyColor({ color: "#d0d0d0" })
-    const handleClick = (e: any) => {
-        setShowNav(current => !current)
-    }
 
 
     return (
