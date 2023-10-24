@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import setBodyColor from './setBodyColor';
+import backgroundImage from '../public/BlueBackground.jpeg'
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -21,46 +22,77 @@ const SignIn = () => {
         navigate('/homepage');
     };
     setBodyColor({ color: "#d0d0d0" })
+
+
+
+
+
     return (
-        <div style={{ transform: "translate(35%, 50%)", }}>
+        <div style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+        }}>
             <Box sx={{
-
-                border: "1px solid black",
-                width: "500px", height: "500px",
-
-                //alignItems: 'center',
-
-
+                borderRadius: "10px",
+                border: "2px solid black",
+                boxShadow: "3px 3px 8px gray",
+                width: "400px",
+                height: "400px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "20px"
             }}>
-                <h1 style={{ display: "flex", justifyContent: "center" }}>User Login</h1>
+                <h1 style={{
+                    fontSize: "24px",
+                    marginBottom: "20px",
+                    textAlign: "center"
+                }}>User Login</h1>
                 <form
                     style={{
                         display: "flex",
-                        justifyContent: "center",
                         flexDirection: "column",
                         alignItems: "center",
-                        transform: "translateY(50%)"
-
+                        width: "100%"
                     }}
-
-                    onSubmit={handleSubmit}>
-                    {/* <div>
-                        <label>Email:</label>
-                        <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
-                    </div> */}
-                    <Box sx={{ flexDirection: "column", width: "24rem", display: "flex", alignItems: "space-around" }}>
-                        <TextField onChange={handleInputChange} label="username"></TextField>
-                        <TextField onChange={handleInputChange} label="password"></TextField>
-                        <Button type="submit" style={{ fontSize: "20px", width: "24rem", height: "50px", backgroundColor: "#bebebe", color: "black", boxShadow: "2px 2px 4px gray" }}>Submit</Button>
-                    </Box>
-                    {/* <div>
-                        <label>Password:</label>
-                        <input type="password" name="password" value={formData.password} onChange={handleInputChange} required />
-                    </div> */}
-
+                    onSubmit={handleSubmit}
+                >
+                    <TextField
+                        sx={{ width: "100%", marginBottom: "20px" }}
+                        onChange={handleInputChange}
+                        label="Username"
+                        variant="outlined"
+                        size="small"
+                    />
+                    <TextField
+                        sx={{ width: "100%", marginBottom: "20px" }}
+                        onChange={handleInputChange}
+                        label="Password"
+                        variant="outlined"
+                        size="small"
+                        type="password"
+                    />
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        style={{
+                            width: "100%",
+                            height: "50px",
+                            backgroundColor: "#bebebe",
+                            color: "black",
+                            boxShadow: "2px 2px 4px gray",
+                            fontSize: "18px"
+                        }}
+                    >
+                        Submit
+                    </Button>
                 </form>
             </Box>
         </div>
+
     );
 };
 
