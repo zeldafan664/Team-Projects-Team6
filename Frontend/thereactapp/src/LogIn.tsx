@@ -34,25 +34,26 @@ const SignIn = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-
+            backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white overlay
+            color: "white", // Text color
         }}>
             <div style={{
                 borderRadius: "10px",
-                border: "2px solid black",
-                boxShadow: "3px 3px 8px gray",
-                width: "450px",
-                height: "450px",
+                border: "2px solid white",
+                boxShadow: "3px 3px 8px rgba(255, 255, 255, 0.5)", // Slightly transparent white shadow
+                width: "400px",
+                height: "400px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
                 padding: "20px",
-                backgroundColor: "rgba(255, 255, 255, 1)" // Optional: Add a semi-transparent white background for better contrast
+                backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent black background
             }}>
                 <h1 style={{
-                    fontSize: "24px",
+                    fontSize: "28px",
                     marginBottom: "20px",
-                    textAlign: "center"
+                    textAlign: "center",
                 }}>User Login</h1>
                 <form
                     style={{
@@ -69,6 +70,14 @@ const SignIn = () => {
                         label="Username"
                         variant="outlined"
                         size="small"
+                        color="primary"
+
+                        InputLabelProps={{
+                            style: { color: "white" }, // Label color
+                        }}
+                        InputProps={{
+                            style: { color: "white", borderColor: "white" }, // Text color and border color
+                        }}
                     />
                     <TextField
                         sx={{ width: "100%", marginBottom: "20px" }}
@@ -77,6 +86,13 @@ const SignIn = () => {
                         variant="outlined"
                         size="small"
                         type="password"
+                        color="primary"
+                        InputLabelProps={{
+                            style: { color: "white" }, // Label color
+                        }}
+                        InputProps={{
+                            style: { color: "white", borderColor: "white" }, // Text color and border color
+                        }}
                     />
                     <Button
                         type="submit"
@@ -84,10 +100,10 @@ const SignIn = () => {
                         style={{
                             width: "100%",
                             height: "50px",
-                            backgroundColor: "#bebebe",
-                            color: "black",
-                            boxShadow: "2px 2px 4px gray",
-                            fontSize: "18px"
+                            backgroundColor: "#4caf50", // Green color
+                            color: "white",
+                            fontSize: "18px",
+                            borderRadius: "25px",
                         }}
                     >
                         Submit
