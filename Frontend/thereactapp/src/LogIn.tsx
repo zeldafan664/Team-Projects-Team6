@@ -1,9 +1,8 @@
 import { Box, Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
-
 import { useNavigate } from 'react-router-dom';
+import backgroundImage from './circle-5090539_1280.jpg';
 import setBodyColor from './setBodyColor';
-import backgroundImage from '../public/BlueBackground.jpeg'
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -21,30 +20,34 @@ const SignIn = () => {
         e.preventDefault();
         navigate('/homepage');
     };
-    setBodyColor({ color: "#d0d0d0" })
-
-
-
 
 
     return (
         <div style={{
             position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: "cover",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+
         }}>
-            <Box sx={{
+            <div style={{
                 borderRadius: "10px",
                 border: "2px solid black",
                 boxShadow: "3px 3px 8px gray",
-                width: "400px",
-                height: "400px",
+                width: "450px",
+                height: "450px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                padding: "20px"
+                padding: "20px",
+                backgroundColor: "rgba(255, 255, 255, 1)" // Optional: Add a semi-transparent white background for better contrast
             }}>
                 <h1 style={{
                     fontSize: "24px",
@@ -90,9 +93,8 @@ const SignIn = () => {
                         Submit
                     </Button>
                 </form>
-            </Box>
+            </div>
         </div>
-
     );
 };
 
