@@ -1,8 +1,8 @@
-import { Box, Button, TextField, ThemeProvider, createTheme } from '@mui/material';
+import { Button, TextField, ThemeProvider, createTheme } from '@mui/material';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import backgroundImage from './circle-5090539_1280.jpg';
-import setBodyColor from './setBodyColor';
+
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -20,6 +20,11 @@ const SignIn = () => {
         e.preventDefault();
         navigate('/homepage');
     };
+    const handleSignIn = (e: any) => {
+        e.preventDefault();
+        navigate('/SignUpPage');
+    };
+
 
     const theme = createTheme({
         components: {
@@ -133,9 +138,27 @@ const SignIn = () => {
                         >
                             Submit
                         </Button>
+                        or
+                        <Button
+                            onClick={handleSignIn}
+                            variant="contained"
+                            style={{
+                                width: "100%",
+                                height: "50px",
+                                backgroundColor: "#4caf50", // Green color
+                                color: "white",
+                                fontSize: "18px",
+                                borderRadius: "25px",
+                            }}
+                        >
+                            Sign Up
+                        </Button>
                     </form>
                 </div>
             </div>
+
+
+
         </ThemeProvider>
     );
 };
