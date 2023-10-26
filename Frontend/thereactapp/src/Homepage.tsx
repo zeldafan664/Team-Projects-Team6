@@ -9,6 +9,7 @@ import { Button, TextField, Tooltip } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LogIn from './LogIn';
 import { Link } from 'react-router-dom';
+import StartStopButton from './StartStopButton';
 
 function Homepage() {
     const [message, setMessage] = useState("Testing default value");
@@ -36,10 +37,12 @@ function Homepage() {
     return (
         <>
             {/* <UserGuide /> */}
-            <Box sx={{ display: "flex", flex: 2, justifyContent: "space-evenly" }}>
+
+            <Box sx={{ display: "flex", flex: 1, justifyContent: "space-evenly" }}>
+
                 <RobotStatus />
+                <StartStopButton />
                 <UsageData />
-                <PieDisplay />
             </Box>
             <div style={{ fontSize: '24px', color: 'red', backgroundColor: 'yellow' }}>{message}</div>
         </>

@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { Box } from '@mui/material';
 
+
 export default function RobotStatus() {
 
     const [active1, setActive1] = useState(false);
@@ -83,6 +84,7 @@ export default function RobotStatus() {
     return (
         <>
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-evenly", height: "65rem" }}>
+
                 <Box >
                     <Button onClick={handleClick1}
                         style={{
@@ -158,31 +160,7 @@ export default function RobotStatus() {
                         </div>
                     </Button>
                 </Box>
-                <Box onMouseEnter={hover4} onMouseLeave={unhover4} >
-                    <Button onClick={handleClick4}
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            border: "2px solid black",
 
-                            width: "10rem",
-                            height: "10rem",
-                            borderRadius: "0.5rem",
-                            boxShadow: "3px 3px 8px gray",
-                            backgroundColor: active4 ? activeColor : inactiveColor
-                        }}
-                    >
-                        <div
-                            style={{
-                                color: active4 ? "white" : "black",
-                                display: "flex",
-                                alignSelf: "center",
-                                fontSize: "22px"
-                            }}
-                        > Battery %
-                        </div>
-                    </Button>
-                </Box>
                 <Box onMouseEnter={hover5} onMouseLeave={unhover5} >
                     <Button onClick={handleClick5}
                         style={{
