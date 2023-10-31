@@ -2,6 +2,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { Box } from '@mui/material';
+import StartStopButton from './StartStopButton';
 
 
 export default function RobotStatus() {
@@ -30,6 +31,7 @@ export default function RobotStatus() {
 
     const inactiveColor = "#bebebe"
     const activeColor = "#5adbb5"
+
     function hover1(e: any) {
         if (active1 === false) {
             e.target.style.background = "gray"
@@ -60,16 +62,7 @@ export default function RobotStatus() {
             e.target.style.background = "#bebebe"
         }
     }
-    function hover4(e: any) {
-        if (active4 === false) {
-            e.target.style.background = "gray"
-        }
-    }
-    function unhover4(e: any) {
-        if (active4 === false) {
-            e.target.style.background = "#bebebe"
-        }
-    }
+
     function hover5(e: any) {
         if (active5 === false) {
             e.target.style.background = "gray"
@@ -83,7 +76,7 @@ export default function RobotStatus() {
 
     return (
         <>
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-evenly", height: "65rem" }}>
+            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
 
                 <Box >
                     <Button onClick={handleClick1}
@@ -91,12 +84,11 @@ export default function RobotStatus() {
                             display: "flex",
                             justifyContent: "center",
                             border: "2px solid black",
-
                             width: "10rem",
                             height: "10rem",
                             borderRadius: "0.5rem",
                             boxShadow: "3px 3px 8px gray",
-                            backgroundColor: active1 ? activeColor : inactiveColor
+                            backgroundColor: inactiveColor
                         }}
                     >
                         <div
@@ -107,7 +99,6 @@ export default function RobotStatus() {
                                 fontSize: "22px"
                             }}
                         > Robot status
-
                         </div>
                     </Button >
                 </Box>
@@ -117,7 +108,6 @@ export default function RobotStatus() {
                             display: "flex",
                             justifyContent: "center",
                             border: "2px solid black",
-
                             width: "10rem",
                             height: "10rem",
                             borderRadius: "0.5rem",
@@ -187,6 +177,7 @@ export default function RobotStatus() {
                         </div>
                     </Button>
                 </Box>
+
             </div >
         </>
     )

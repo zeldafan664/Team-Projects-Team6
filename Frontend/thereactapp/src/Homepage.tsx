@@ -5,11 +5,12 @@ import Box from '@mui/material/Box';
 import PieDisplay from './PieChart';
 import UsageData from './UsageData';
 import UserGuide from './UserGuide';
-import { Button, TextField, Tooltip } from '@mui/material';
+import { Button, TextField, ThemeProvider, Tooltip, createTheme } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LogIn from './LogIn';
 import { Link } from 'react-router-dom';
 import StartStopButton from './StartStopButton';
+import backgroundImage from './circle-5090539_1280.jpg';
 
 function Homepage() {
     const [message, setMessage] = useState("Testing default value");
@@ -31,20 +32,58 @@ function Homepage() {
     }, []);
 
 
-    setBodyColor({ color: "#d0d0d0" })
-
+    const theme = createTheme({
+        components: {
+            MuiTextField: {
+                defaultProps: {
+                    variant: 'outlined',
+                    size: 'small',
+                },
+                styleOverrides: {
+                    root: {
+                        '& .MuiOutlinedInput-root': {
+                            '& fieldset': {
+                                borderColor: 'white', // Set the border color
+                            },
+                            '&:hover fieldset': {
+                                borderColor: 'white', // Set the border color on hover
+                            },
+                            '&.Mui-focused fieldset': {
+                                borderColor: 'white', // Set the border color when focused
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    });
 
     return (
         <>
             {/* <UserGuide /> */}
+            <ThemeProvider theme={theme}>
+                <div style={{
+                    position: "absolute",
+                    // top: 0,
+                    // left: 0,
+                    width: "100%",
+                    height: "100%",
+                    backgroundImage: `url(${backgroundImage})`,
+                    backgroundSize: "cover",
+                    // display: "flex",
+                    // alignItems: "center",
+                    // justifyContent: "center",
+                    //backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white overlay
+                    // color: "white", // Text color
+                }} >
+                    <Box sx={{ display: "flex", flex: 1, justifyContent: "space-evenly" }}>
+                        <StartStopButton />
+                        <RobotStatus />
 
-            <Box sx={{ display: "flex", flex: 1, justifyContent: "space-evenly" }}>
-
-                <RobotStatus />
-                <StartStopButton />
-                <UsageData />
-            </Box>
-            <div style={{ fontSize: '24px', color: 'red', backgroundColor: 'yellow' }}>{message}</div>
+                    </Box>
+                    <div style={{ fontSize: '24px', color: 'red', backgroundColor: 'yellow' }}>{message}</div>
+                </div>
+            </ThemeProvider >
         </>
     );
 }
