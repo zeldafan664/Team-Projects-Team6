@@ -5,9 +5,15 @@ import {
     createTheme,
     TextField,
     Button,
-    Typography,
 } from '@mui/material';
 import backgroundImage from './circle-5090539_1280.jpg';
+
+// Define the type for a user account
+type UserAccount = {
+    email: string;
+    password: string;
+    username: string;
+};
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -18,16 +24,29 @@ const SignUp = () => {
         username: ''
     });
 
-    const handleInputChange = (e: any) => {
+    const [userAccounts, setUserAccounts] = useState<UserAccount[]>([]); // Specify the type as an array of UserAccount
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-
-    const handleSignUp = (e: any) => {
+    const handleSignUp = (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Create a user object with the form data
+        const user: UserAccount = {
+            email: formData.email,
+            password: formData.password,
+            username: formData.username
+        };
+
+        // Add the user object to the userAccounts array
+        setUserAccounts([...userAccounts, user]);
+
         navigate('/homepage');
     };
+
     const theme = createTheme({
         components: {
             MuiTextField: {
@@ -53,6 +72,7 @@ const SignUp = () => {
             },
         },
     });
+
     return (
         <ThemeProvider theme={theme}>
             <div style={{
@@ -94,7 +114,6 @@ const SignUp = () => {
                             alignItems: "center",
                             width: "100%"
                         }}
-
                     >
                         <TextField
                             sx={{ width: "100%", marginBottom: "20px" }}
@@ -102,7 +121,7 @@ const SignUp = () => {
                             variant="outlined"
                             size="small"
                             name="username"
-                            type="username"
+                            type="text"
                             required
                             value={formData.username}
                             onChange={handleInputChange}

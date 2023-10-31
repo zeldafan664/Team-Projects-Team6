@@ -1,8 +1,19 @@
-import { Button, TextField, ThemeProvider, createTheme } from '@mui/material';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {
+    ThemeProvider,
+    createTheme,
+    TextField,
+    Button,
+} from '@mui/material';
 import backgroundImage from './circle-5090539_1280.jpg';
 
+// Define the type for a user account
+type UserAccount = {
+    email: string;
+    password: string;
+    username: string;
+};
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -11,20 +22,31 @@ const SignIn = () => {
         password: ''
     });
 
-    const handleInputChange = (e: any) => {
+    const [userAccounts, setUserAccounts] = useState<UserAccount[]>([]); // Store registered user accounts
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        navigate('/homepage');
-    };
-    const handleSignIn = (e: any) => {
-        e.preventDefault();
-        navigate('/SignUpPage');
+
+        // Check if the entered email and password match any registered user
+        const user = userAccounts.find((user) => user.email === formData.email && user.password === formData.password);
+
+        if (user) {
+            // If there's a match, navigate to the home page
+            navigate('/homepage');
+        } else {
+            // If there's no match, display an error message or take other actions as needed
+            alert("Invalid email or password. Please try again.");
+        }
     };
 
+    const handleSignIn = () => {
+        navigate('/SignUpPage');
+    };
 
     const theme = createTheme({
         components: {
@@ -51,6 +73,7 @@ const SignIn = () => {
             },
         },
     });
+
     return (
         <ThemeProvider theme={theme}>
             <div style={{
@@ -97,11 +120,10 @@ const SignIn = () => {
                         <TextField
                             sx={{ width: "100%", marginBottom: "20px" }}
                             onChange={handleInputChange}
-                            label="Username"
+                            label="Email"
                             variant="outlined"
                             size="small"
-                            color="primary"
-
+                            name="email"
                             InputLabelProps={{
                                 style: { color: "white" }, // Label color
                             }}
@@ -116,7 +138,7 @@ const SignIn = () => {
                             variant="outlined"
                             size="small"
                             type="password"
-                            color="primary"
+                            name="password"
                             InputLabelProps={{
                                 style: { color: "white" }, // Label color
                             }}
@@ -156,9 +178,6 @@ const SignIn = () => {
                     </form>
                 </div>
             </div>
-
-
-
         </ThemeProvider>
     );
 };
