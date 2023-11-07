@@ -10,9 +10,9 @@ export default function RobotStatus() {
     const inactiveColor = "#bebebe"
     return (
         <>
-            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+            <div style={{ display: "flex" }}>
 
-                <Box >
+                <Box style={{ paddingRight: "0.5rem", }}>
                     <Button
                         style={{
                             display: "flex",
@@ -20,6 +20,7 @@ export default function RobotStatus() {
                             border: "2px solid black",
                             width: "12rem",
                             height: "12rem",
+
                             borderRadius: "0.5rem",
                             boxShadow: "3px 3px 8px gray",
                             backgroundColor: inactiveColor
@@ -35,7 +36,7 @@ export default function RobotStatus() {
                         </div>
                     </Button >
                 </Box>
-                <Box>
+                <Box style={{ paddingRight: "0.5rem", }}>
                     <Button
                         style={{
                             display: "flex",
@@ -58,7 +59,7 @@ export default function RobotStatus() {
                         </div>
                     </Button>
                 </Box>
-                <Box >
+                <Box style={{ paddingRight: "0.5rem", }}>
                     <Button
                         style={{
                             display: "flex",

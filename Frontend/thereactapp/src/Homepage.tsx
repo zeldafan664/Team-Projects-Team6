@@ -81,7 +81,7 @@ function Homepage() {
                         <RobotStatus />
 
                     </Box>
-                    <div style={{ fontSize: '24px', color: 'red', backgroundColor: 'yellow' }}>{message}</div>
+                    {/* <div style={{ fontSize: '24px', color: 'red', backgroundColor: 'yellow' }}>{message}</div> */}
                 </div>
             </ThemeProvider >
         </>
