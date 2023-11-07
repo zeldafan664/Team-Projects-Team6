@@ -32,7 +32,7 @@ export default function RobotStatus() {
                                 alignSelf: "center",
                                 fontSize: "22px"
                             }}
-                        > Robot status
+                        > <b>Robot status</b>
                         </div>
                     </Button >
                 </Box>
@@ -55,7 +55,7 @@ export default function RobotStatus() {
                                 alignSelf: "center",
                                 fontSize: "22px"
                             }}
-                        > Task Status
+                        > <b>Task Status</b>
                         </div>
                     </Button>
                 </Box>
@@ -78,7 +78,7 @@ export default function RobotStatus() {
                                 alignSelf: "center",
                                 fontSize: "22px"
                             }}
-                        > Com. Status
+                        > <b>Com. Status</b>
                         </div>
                     </Button>
                 </Box>
@@ -103,7 +103,7 @@ export default function RobotStatus() {
                                 alignSelf: "center",
                                 fontSize: "22px"
                             }}
-                        > Task %
+                        > <b>Task %</b>
                         </div>
                     </Button>
                 </Box>

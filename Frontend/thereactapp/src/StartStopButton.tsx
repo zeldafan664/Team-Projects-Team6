@@ -34,7 +34,7 @@ const StartStopButton = () => {
                 }}
                 onClick={toggleButton}
             >
-                {isRunning ? "Stop" : "Start"}
+                <b>{isRunning ? "Stop" : "Start"}</b>
             </Button>
 
         </div>
