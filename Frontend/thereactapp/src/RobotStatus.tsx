@@ -18,8 +18,8 @@ export default function RobotStatus() {
                             display: "flex",
                             justifyContent: "center",
                             border: "2px solid black",
-                            width: "10rem",
-                            height: "10rem",
+                            width: "12rem",
+                            height: "12rem",
                             borderRadius: "0.5rem",
                             boxShadow: "3px 3px 8px gray",
                             backgroundColor: inactiveColor
@@ -41,8 +41,8 @@ export default function RobotStatus() {
                             display: "flex",
                             justifyContent: "center",
                             border: "2px solid black",
-                            width: "10rem",
-                            height: "10rem",
+                            width: "12rem",
+                            height: "12rem",
                             borderRadius: "0.5rem",
                             boxShadow: "3px 3px 8px gray",
                             backgroundColor: inactiveColor
@@ -64,8 +64,8 @@ export default function RobotStatus() {
                             display: "flex",
                             justifyContent: "center",
                             border: "2px solid black",
-                            width: "10rem",
-                            height: "10rem",
+                            width: "12rem",
+                            height: "12rem",
                             borderRadius: "0.5rem",
                             boxShadow: "3px 3px 8px gray",
                             backgroundColor: inactiveColor
@@ -88,9 +88,8 @@ export default function RobotStatus() {
                             display: "flex",
                             justifyContent: "center",
                             border: "2px solid black",
-
-                            width: "10rem",
-                            height: "10rem",
+                            width: "12rem",
+                            height: "12rem",
                             borderRadius: "0.5rem",
                             boxShadow: "3px 3px 8px gray",
                             backgroundColor: inactiveColor

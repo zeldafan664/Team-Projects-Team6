@@ -21,8 +21,9 @@ const StartStopButton = () => {
             <Button
                 variant="contained"
                 sx={{
-                    width: "10rem",
-                    height: "10rem",
+                    fontSize: "22px",
+                    width: "12rem",
+                    height: "12rem",
                     borderRadius: "0.5rem",
                     boxShadow: "3px 3px 8px gray",
                     backgroundColor: isRunning ? "#e74c3c" : "#3498db",

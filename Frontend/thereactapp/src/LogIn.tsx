@@ -34,7 +34,7 @@ const SignIn = () => {
 
         // Check if the entered email and password match any registered user
         const user = userAccounts.find((user) => user.email === formData.email && user.password === formData.password);
-
+        console.log(formData.email)
         if (user) {
             // If there's a match, navigate to the home page
             navigate('/homepage');

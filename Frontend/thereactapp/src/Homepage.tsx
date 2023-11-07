@@ -64,16 +64,16 @@ function Homepage() {
             <ThemeProvider theme={theme}>
                 <div style={{
                     position: "absolute",
-                    // top: 0,
-                    // left: 0,
+                    top: 0,
+                    left: 0,
                     width: "100%",
                     height: "100%",
                     backgroundImage: `url(${backgroundImage})`,
                     backgroundSize: "cover",
-                    // display: "flex",
-                    // alignItems: "center",
-                    // justifyContent: "center",
-                    //backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white overlay
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white overlay
                     // color: "white", // Text color
                 }} >
                     <Box sx={{ display: "flex", flex: 1, justifyContent: "space-evenly" }}>
