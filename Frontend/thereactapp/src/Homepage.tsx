@@ -61,6 +61,7 @@ function Homepage() {
     return (
         <>
             {/* <UserGuide /> */}
+
             <ThemeProvider theme={theme}>
                 <div style={{
                     position: "absolute",
@@ -70,16 +71,25 @@ function Homepage() {
                     height: "100%",
                     backgroundImage: `url(${backgroundImage})`,
                     backgroundSize: "cover",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    // display: "flex",
+                    // alignItems: "center",
+                    // justifyContent: "center",
                     backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white overlay
                     // color: "white", // Text color
                 }} >
-                    <Box sx={{ display: "flex", flex: 1, justifyContent: "space-evenly" }}>
+                    <Box sx={{ display: "flex", flex: 1, justifyContent: "space-evenly", paddingTop: "2rem" }}>
                         <StartStopButton />
                         <RobotStatus />
 
+                        {/* <PieDisplay /> */}
+                    </Box>
+                    <Box sx={{
+                        position: 'fixed',
+                        bottom: 0,
+                        left: 0,
+                        width: '100%',
+                    }}>
+                        <UsageData />
                     </Box>
                     {/* <div style={{ fontSize: '24px', color: 'red', backgroundColor: 'yellow' }}>{message}</div> */}
                 </div>
