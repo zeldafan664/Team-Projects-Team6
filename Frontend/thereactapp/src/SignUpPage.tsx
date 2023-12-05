@@ -8,69 +8,47 @@ import {
 } from '@mui/material';
 import backgroundImage from './circle-5090539_1280.jpg';
 
-// Define the type for a user account
-type UserAccount = {
-    email: string;
-    password: string;
-    username: string;
-};
-
 const SignUp = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: '',
         password: '',
-        confirmPassword: '',
         username: ''
     });
 
-    const [userAccounts, setUserAccounts] = useState<UserAccount[]>([]); // Specify the type as an array of UserAccount
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (e: { target: { name: any; value: any; }; }) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSignUp = (e: React.FormEvent) => {
+    const handleSignUp = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-
-        // Create a user object with the form data
-        const user: UserAccount = {
-            email: formData.email,
-            password: formData.password,
-            username: formData.username
-        };
-
-        // Add the user object to the userAccounts array
-        setUserAccounts([...userAccounts, user]);
-
-        navigate('/homepage');
+        console.log("Form Data to be Sent: ", formData);
+    
+        try {
+            const response = await fetch('/signupPage.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(formData).toString(),
+            });
+    
+            if (response.status === 200) {
+                // Registration was successful
+                navigate('/homepage');
+            } else {
+                // Registration failed
+                console.error("User registration failed");
+            }
+        } catch (error) {
+            console.error("Error during the fetch:", error);
+        }
     };
+    
 
     const theme = createTheme({
-        components: {
-            MuiTextField: {
-                defaultProps: {
-                    variant: 'outlined',
-                    size: 'small',
-                },
-                styleOverrides: {
-                    root: {
-                        '& .MuiOutlinedInput-root': {
-                            '& fieldset': {
-                                borderColor: 'white', // Set the border color
-                            },
-                            '&:hover fieldset': {
-                                borderColor: 'white', // Set the border color on hover
-                            },
-                            '&.Mui-focused fieldset': {
-                                borderColor: 'white', // Set the border color when focused
-                            },
-                        },
-                    },
-                },
-            },
-        },
+        // ... (your theme settings)
     });
 
     return (
@@ -86,13 +64,13 @@ const SignUp = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white overlay
-                color: "white", // Text color
-            }} >
+                backgroundColor: "rgba(255, 255, 255, 0.8)",
+                color: "white",
+            }}>
                 <div style={{
                     borderRadius: "10px",
                     border: "2px solid white",
-                    boxShadow: "3px 3px 8px rgba(255, 255, 255, 0.5)", // Slightly transparent white shadow
+                    boxShadow: "3px 3px 8px rgba(255, 255, 255, 0.5)",
                     width: "400px",
                     height: "400px",
                     display: "flex",
@@ -100,7 +78,7 @@ const SignUp = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     padding: "20px",
-                    backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent black background
+                    backgroundColor: "rgba(0, 0, 0, 0.6)",
                 }}>
                     <h1 style={{
                         fontSize: "28px",
@@ -114,6 +92,7 @@ const SignUp = () => {
                             alignItems: "center",
                             width: "100%"
                         }}
+                        onSubmit={handleSignUp}
                     >
                         <TextField
                             sx={{ width: "100%", marginBottom: "20px" }}
@@ -126,10 +105,10 @@ const SignUp = () => {
                             value={formData.username}
                             onChange={handleInputChange}
                             InputLabelProps={{
-                                style: { color: "white" }, // Label color
+                                style: { color: "white" },
                             }}
                             InputProps={{
-                                style: { color: "white", borderColor: "white" }, // Text color and border color
+                                style: { color: "white", borderColor: "white" },
                             }}
                         />
                         <TextField
@@ -143,10 +122,10 @@ const SignUp = () => {
                             value={formData.email}
                             onChange={handleInputChange}
                             InputLabelProps={{
-                                style: { color: "white" }, // Label color
+                                style: { color: "white" },
                             }}
                             InputProps={{
-                                style: { color: "white", borderColor: "white" }, // Text color and border color
+                                style: { color: "white", borderColor: "white" },
                             }}
                         />
                         <TextField
@@ -160,38 +139,20 @@ const SignUp = () => {
                             value={formData.password}
                             onChange={handleInputChange}
                             InputLabelProps={{
-                                style: { color: "white" }, // Label color
+                                style: { color: "white" },
                             }}
                             InputProps={{
-                                style: { color: "white", borderColor: "white" }, // Text color and border color
-                            }}
-                        />
-                        <TextField
-                            sx={{ width: "100%", marginBottom: "20px" }}
-                            label="Confirm Password"
-                            variant="outlined"
-                            size="small"
-                            name="confirmPassword"
-                            type="password"
-                            required
-                            value={formData.confirmPassword}
-                            onChange={handleInputChange}
-                            InputLabelProps={{
-                                style: { color: "white" }, // Label color
-                            }}
-                            InputProps={{
-                                style: { color: "white", borderColor: "white" }, // Text color and border color
+                                style: { color: "white", borderColor: "white" },
                             }}
                         />
                         <Button
                             type="submit"
-                            onClick={handleSignUp}
                             variant="contained"
                             color="primary"
                             style={{
                                 width: "100%",
                                 height: "50px",
-                                backgroundColor: "#4caf50", // Green color
+                                backgroundColor: "#4caf50",
                                 color: "white",
                                 fontSize: "18px",
                                 borderRadius: "25px",
@@ -207,3 +168,4 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
